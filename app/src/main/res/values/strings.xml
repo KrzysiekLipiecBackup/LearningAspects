@@ -1,8 +1,10 @@
 <resources>
     <string name="app_name">LearningAspects</string>
-    <string name="title_activity_main2">Main2Activity</string>
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
     <string name="title_activity_main_2">MainActivity_2</string>
+    <string name="button_activity_main_1">Let\'s Practice</string>
+    <string name="image_description_activity_main">chmurka z napisem cześć</string>
+    <string name="temp_logo_ecs">LOGO ECS</string>
 </resources>
