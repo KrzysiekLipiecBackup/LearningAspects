@@ -1,4 +1,4 @@
-package com.example.learningaspects.ui.home;
+package com.example.learningaspects.ui.practice;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -14,17 +14,17 @@ import androidx.lifecycle.ViewModelProviders;
 
 import com.example.learningaspects.R;
 
-public class HomeFragment extends Fragment {
+public class PracticeFragment extends Fragment {
 
-    private HomeViewModel homeViewModel;
+    private PracticeViewModel practiceViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        homeViewModel =
-                ViewModelProviders.of(this).get(HomeViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_home, container, false);
-        final TextView textView = root.findViewById(R.id.text_home);
-        homeViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
+        practiceViewModel =
+                ViewModelProviders.of(this).get(PracticeViewModel.class);
+        View root = inflater.inflate(R.layout.fragment_practice, container, false);
+        final TextView textView = root.findViewById(R.id.text_practice);
+        practiceViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);
