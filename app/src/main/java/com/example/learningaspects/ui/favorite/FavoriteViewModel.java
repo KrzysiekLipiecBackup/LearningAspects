@@ -1,14 +1,14 @@
-package com.example.learningaspects.ui.notifications;
+package com.example.learningaspects.ui.favorite;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class NotificationsViewModel extends ViewModel {
+public class FavoriteViewModel extends ViewModel {
 
     private MutableLiveData<String> mText;
 
-    public NotificationsViewModel() {
+    public FavoriteViewModel() {
         mText = new MutableLiveData<>();
         mText.setValue("This is notifications fragment");
     }

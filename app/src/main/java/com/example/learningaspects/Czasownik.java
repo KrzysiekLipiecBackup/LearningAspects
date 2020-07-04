@@ -9,6 +9,11 @@ public class Czasownik {
         mText1 = text1;
         mText2 = text2;
     }
+
+    public void changeImage(int image) {
+        mImageResource = image;
+    }
+
     public int getImageResource() {
         return mImageResource;
     }
