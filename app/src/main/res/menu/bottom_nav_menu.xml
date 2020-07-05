@@ -7,9 +7,9 @@
         android:title="@string/title_practice" />
 
     <item
-        android:id="@+id/navigation_dashboard"
-        android:icon="@drawable/ic_dashboard_black_24dp"
-        android:title="@string/title_dashboard" />
+        android:id="@+id/navigation_all_verbs"
+        android:icon="@drawable/ic_view_headline_black_24dp"
+        android:title="@string/title_all_verbs" />
 
     <item
         android:id="@+id/navigation_favorite"

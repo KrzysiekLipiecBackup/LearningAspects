@@ -3,6 +3,8 @@ package com.example.learningaspects;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Filter;
+import android.widget.Filterable;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -10,9 +12,11 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
+import java.util.List;
 
-public class CzasownikAdapter extends RecyclerView.Adapter<CzasownikAdapter.CzasownikViewHolder> {
+public class CzasownikAdapter extends RecyclerView.Adapter<CzasownikAdapter.CzasownikViewHolder> implements Filterable {
     private ArrayList<Czasownik> mCzasownikList;
+    private ArrayList<Czasownik> mCzasownikListFull;
     private OnItemClickListener mListener;
 
     public interface OnItemClickListener {
@@ -50,6 +54,7 @@ public class CzasownikAdapter extends RecyclerView.Adapter<CzasownikAdapter.Czas
 
     public CzasownikAdapter(ArrayList<Czasownik> czasownikList) {
         mCzasownikList = czasownikList;
+        mCzasownikListFull = new ArrayList<>(mCzasownikList);   //nowa KOPIA!!! listy do użycia przy wyszukiwaniu
     }
     @NonNull
     @Override
@@ -72,4 +77,39 @@ public class CzasownikAdapter extends RecyclerView.Adapter<CzasownikAdapter.Czas
     public int getItemCount() {
         return mCzasownikList.size();
     }
+
+    @Override
+    public Filter getFilter() {
+        return czasownikFilter;
+    }
+
+    private Filter czasownikFilter = new Filter() {
+        @Override
+        protected FilterResults performFiltering(CharSequence constraint) {
+            List<Czasownik> filteredList = new ArrayList<>();
+
+            if (constraint == null || constraint.length() == 0) {
+                filteredList.addAll(mCzasownikListFull);
+            } else {
+                String filterPattern = constraint.toString().toLowerCase().trim();
+                for (Czasownik item : mCzasownikListFull) {
+                    if (item.getText1().toLowerCase().contains(filterPattern) || item.getText2().toLowerCase().contains(filterPattern)) { //zamiast contains() może być startsWith()
+                        filteredList.add(item);
+                    }
+                }
+            }
+
+            FilterResults results = new FilterResults();
+            results.values = filteredList;
+
+            return results;
+        }
+
+        @Override
+        protected void publishResults(CharSequence constraint, FilterResults results) {
+            mCzasownikList.clear();
+            mCzasownikList.addAll((List) results.values);
+            notifyDataSetChanged();
+        }
+    };
 }

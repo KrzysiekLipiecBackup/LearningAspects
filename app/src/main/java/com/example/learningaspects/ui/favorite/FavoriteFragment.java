@@ -97,11 +97,12 @@ public class FavoriteFragment extends Fragment {
         mAdapter.setOnItemClickListener(new CzasownikAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(int position) {
-                if (mCzasownikList.get(position).getImageResource() == R.drawable.ic_star_border_black_24dp) {
-                    changeImage(position, R.drawable.ic_star_black_24dp);
-                } else if (mCzasownikList.get(position).getImageResource() == R.drawable.ic_star_black_24dp) {
-                    changeImage(position, R.drawable.ic_star_border_black_24dp);
-                } else changeImage(position, R.drawable.ic_practice_black_24dp);
+//                if (mCzasownikList.get(position).getImageResource() == R.drawable.ic_star_border_black_24dp) {
+//                    changeImage(position, R.drawable.ic_star_black_24dp);
+//                } else if (mCzasownikList.get(position).getImageResource() == R.drawable.ic_star_black_24dp) {
+//                    changeImage(position, R.drawable.ic_star_border_black_24dp);
+//                } else changeImage(position, R.drawable.ic_practice_black_24dp);
+                removeItem(position);
             }
         });
     }

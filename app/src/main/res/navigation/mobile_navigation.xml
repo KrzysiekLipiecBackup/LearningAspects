@@ -12,10 +12,10 @@
         tools:layout="@layout/fragment_practice" />
 
     <fragment
-        android:id="@+id/navigation_dashboard"
-        android:name="com.example.learningaspects.ui.dashboard.DashboardFragment"
-        android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
+        android:id="@+id/navigation_all_verbs"
+        android:name="com.example.learningaspects.ui.allVerbs.AllVerbsFragment"
+        android:label="@string/title_all_verbs"
+        tools:layout="@layout/fragment_all_verbs" />
 
     <fragment
         android:id="@+id/navigation_favorite"

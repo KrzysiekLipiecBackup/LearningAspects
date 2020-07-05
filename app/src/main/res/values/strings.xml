@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">LearningAspects</string>
     <string name="title_practice">Practice</string>
-    <string name="title_dashboard">Dashboard</string>
+    <string name="title_all_verbs">All Verbs</string>
     <string name="title_favorite">Favorite</string>
     <string name="title_activity_main_2">MainActivity_2</string>
     <string name="button_activity_main_1">Let\'s Practice</string>
