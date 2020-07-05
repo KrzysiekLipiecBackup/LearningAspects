@@ -98,27 +98,32 @@ public class AllVerbsFragment extends Fragment {
         mCzasownikList = gson.fromJson(json, type);
         if (mCzasownikList == null) {
             mCzasownikList = new ArrayList<>();
-            mCzasownikList.add(new Czasownik(true, "robić", "zrobić"));
-            mCzasownikList.add(new Czasownik(false, "oglądać", "obejrzeć"));
-            mCzasownikList.add(new Czasownik(false, "pić", "wypić"));
-            mCzasownikList.add(new Czasownik(false, "robić", "zrobić"));
-            mCzasownikList.add(new Czasownik(true, "oglądać", "obejrzeć"));
-            mCzasownikList.add(new Czasownik(false, "pić", "wypić"));
-            mCzasownikList.add(new Czasownik(false, "robić", "zrobić"));
-            mCzasownikList.add(new Czasownik(false, "oglądać", "obejrzeć"));
-            mCzasownikList.add(new Czasownik(false, "pić", "wypić"));
-            mCzasownikList.add(new Czasownik(false, "robić", "zrobić"));
-            mCzasownikList.add(new Czasownik(false, "oglądać", "obejrzeć"));
-            mCzasownikList.add(new Czasownik(false, "pić", "wypić"));
-            mCzasownikList.add(new Czasownik(false, "robić", "zrobić"));
-            mCzasownikList.add(new Czasownik(false, "oglądać", "obejrzeć"));
-            mCzasownikList.add(new Czasownik(false, "pić", "wypić"));
-            mCzasownikList.add(new Czasownik(false, "robić", "zrobić"));
-            mCzasownikList.add(new Czasownik(false, "oglądać", "obejrzeć"));
-            mCzasownikList.add(new Czasownik(false, "pić", "wypić"));
-            mCzasownikList.add(new Czasownik(false, "robić", "zrobić"));
-            mCzasownikList.add(new Czasownik(false, "oglądać", "obejrzeć"));
-            mCzasownikList.add(new Czasownik(false, "pić", "wypić"));
+            mCzasownikList.add(new Czasownik(false, "brać",         "wziąć"));
+            mCzasownikList.add(new Czasownik(false, "dawać",        "dać"));
+            mCzasownikList.add(new Czasownik(false, "dostawać",     "dostać"));
+            mCzasownikList.add(new Czasownik(false, "iść",	      "pójść"));
+            mCzasownikList.add(new Czasownik(false, "oglądać",      "obejrzeć"));
+            mCzasownikList.add(new Czasownik(false, "pić",          "wypić"));
+            mCzasownikList.add(new Czasownik(false, "poczuć",	      "czuć"));
+            mCzasownikList.add(new Czasownik(false, "pomyśleć",     "myśleć"));
+            mCzasownikList.add(new Czasownik(false, "powiedzieć",   "mówić"));
+            mCzasownikList.add(new Czasownik(false, "pójść",	      "iść"));
+            mCzasownikList.add(new Czasownik(false, "przychodzić",  "przyjść"));
+            mCzasownikList.add(new Czasownik(false, "robić",        "zrobić"));
+            mCzasownikList.add(new Czasownik(false, "spoglądać",    "spojrzeć"));
+            mCzasownikList.add(new Czasownik(false, "spróbować",    "próbować"));
+            mCzasownikList.add(new Czasownik(false, "stawać", 	  "stać"));
+            mCzasownikList.add(new Czasownik(false, "udawać",	      "udać"));
+            mCzasownikList.add(new Czasownik(false, "wchodzić",     "wejść"));
+            mCzasownikList.add(new Czasownik(false, "widzieć",	  "zobaczyć"));
+            mCzasownikList.add(new Czasownik(false, "wracać", 	  "wrócić"));
+            mCzasownikList.add(new Czasownik(false, "wychodzić",    "wyjść"));
+            mCzasownikList.add(new Czasownik(false, "wydać", 	      "wydawać"));
+            mCzasownikList.add(new Czasownik(false, "zaczynać",	  "zacząć"));
+            mCzasownikList.add(new Czasownik(false, "zapytywać",    "zapytać"));
+            mCzasownikList.add(new Czasownik(false, "zechcieć",	  "chcieć"));
+            mCzasownikList.add(new Czasownik(false, "zobaczyć",	  "widzieć"));
+            mCzasownikList.add(new Czasownik(false, "zostawać",	  "zostać"));
         }
     }
 
