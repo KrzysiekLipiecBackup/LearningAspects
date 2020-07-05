@@ -33,11 +33,6 @@ public class FavoriteFragment extends Fragment {
     private CzasownikAdapter mAdapter;  /* pozwala na załadowanie tylko tyle co trzeba a nie wszystkich*/
     private RecyclerView.LayoutManager mLayoutManager;
 
-    private Button buttonInsert;
-    private Button buttonRemove;
-    private EditText editTextInsert;
-    private EditText editTextRemove;
-
     private FavoriteViewModel favoriteViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -49,29 +44,6 @@ public class FavoriteFragment extends Fragment {
 
         createCzasownikList();
         buildRecyclerView();
-
-        buttonInsert = root.findViewById(R.id.button_insert);
-        buttonRemove = root.findViewById(R.id.button_remove);
-        editTextInsert = root.findViewById(R.id.edittext_insert);
-        editTextRemove = root.findViewById(R.id.edittext_remove);
-
-        buttonInsert.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                int position = Integer.parseInt(editTextInsert.getText().toString());
-                insertItem(position);
-            }
-        });
-
-        buttonRemove.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-//                int position = Integer.parseInt(editTextRemove.getText().toString());
-//                removeItem(position);
-                mCzasownikList = null;
-                saveData();
-            }
-        });
 
         return root;
     }
@@ -112,11 +84,6 @@ public class FavoriteFragment extends Fragment {
         mAdapter.setOnItemClickListener(new CzasownikAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(int position) {
-//                if (mCzasownikList.get(position).getImageResource() == R.drawable.ic_star_border_black_24dp) {
-//                    changeImage(position, R.drawable.ic_star_black_24dp);
-//                } else if (mCzasownikList.get(position).getImageResource() == R.drawable.ic_star_black_24dp) {
-//                    changeImage(position, R.drawable.ic_star_border_black_24dp);
-//                } else changeImage(position, R.drawable.ic_practice_black_24dp);
 
                 for(int i = 0; i<mCzasownikList.size() - 1; i++) {
                     if(mCzasownikList.get(i).getText1() == mCzasownikListFav.get(position).getText1()) {
@@ -148,27 +115,6 @@ public class FavoriteFragment extends Fragment {
         mCzasownikList = gson.fromJson(json, type);
         if (mCzasownikList == null) {
             mCzasownikList = new ArrayList<>();
-//            mCzasownikList.add(new Czasownik(true, "robić", "zrobić"));
-//            mCzasownikList.add(new Czasownik(true, "oglądać", "obejrzeć"));
-//            mCzasownikList.add(new Czasownik(true, "pić", "wypić"));
-//            mCzasownikList.add(new Czasownik(true, "robić", "zrobić"));
-//            mCzasownikList.add(new Czasownik(true, "oglądać", "obejrzeć"));
-//            mCzasownikList.add(new Czasownik(false, "pić", "wypić"));
-//            mCzasownikList.add(new Czasownik(false, "robić", "zrobić"));
-//            mCzasownikList.add(new Czasownik(false, "oglądać", "obejrzeć"));
-//            mCzasownikList.add(new Czasownik(false, "pić", "wypić"));
-//            mCzasownikList.add(new Czasownik(false, "robić", "zrobić"));
-//            mCzasownikList.add(new Czasownik(false, "oglądać", "obejrzeć"));
-//            mCzasownikList.add(new Czasownik(false, "pić", "wypić"));
-//            mCzasownikList.add(new Czasownik(false, "robić", "zrobić"));
-//            mCzasownikList.add(new Czasownik(false, "oglądać", "obejrzeć"));
-//            mCzasownikList.add(new Czasownik(false, "pić", "wypić"));
-//            mCzasownikList.add(new Czasownik(false, "robić", "zrobić"));
-//            mCzasownikList.add(new Czasownik(false, "oglądać", "obejrzeć"));
-//            mCzasownikList.add(new Czasownik(false, "pić", "wypić"));
-//            mCzasownikList.add(new Czasownik(false, "robić", "zrobić"));
-//            mCzasownikList.add(new Czasownik(false, "oglądać", "obejrzeć"));
-//            mCzasownikList.add(new Czasownik(false, "pić", "wypić"));
         }
     }
 }
