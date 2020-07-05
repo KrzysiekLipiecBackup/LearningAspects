@@ -68,7 +68,8 @@ public class CzasownikAdapter extends RecyclerView.Adapter<CzasownikAdapter.Czas
     public void onBindViewHolder(@NonNull CzasownikViewHolder holder, int position) {
         Czasownik currentItem = mCzasownikList.get(position);
 
-        holder.mImageView.setImageResource(currentItem.getImageResource());
+        if(currentItem.getImageResource() == false) holder.mImageView.setImageResource(R.drawable.ic_star_border_black_24dp);
+        else holder.mImageView.setImageResource(R.drawable.ic_star_black_24dp);
         holder.mTextView1.setText(currentItem.getText1());
         holder.mTextView2.setText(currentItem.getText2());
     }

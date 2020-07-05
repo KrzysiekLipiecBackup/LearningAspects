@@ -1,21 +1,21 @@
 package com.example.learningaspects;
 
 public class Czasownik {
-    private int mImageResource;
+    private boolean mStarred;
     private String mText1;
     private String mText2;
-    public Czasownik(int imageResource, String text1, String text2) {
-        mImageResource = imageResource;
+    public Czasownik(boolean starred, String text1, String text2) {
+        mStarred = starred;
         mText1 = text1;
         mText2 = text2;
     }
 
-    public void changeImage(int image) {
-        mImageResource = image;
+    public void changeImage(boolean star) {
+        mStarred = star;
     }
 
-    public int getImageResource() {
-        return mImageResource;
+    public boolean getImageResource() {
+        return mStarred;
     }
     public String getText1() {
         return mText1;

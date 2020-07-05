@@ -48,34 +48,34 @@ public class AllVerbsFragment extends Fragment {
         return root;
     }
 
-    public void changeImage(int position, int image) {
+    public void changeImage(int position, boolean image) {
         mCzasownikList.get(position).changeImage(image);
         mAdapter.notifyItemChanged(position);
     }
 
     public void createCzasownikList() {
         mCzasownikList = new ArrayList<>();
-        mCzasownikList.add(new Czasownik(R.drawable.ic_star_border_black_24dp, "robić", "zrobić"));
-        mCzasownikList.add(new Czasownik(R.drawable.ic_star_black_24dp, "oglądać", "obejrzeć"));
-        mCzasownikList.add(new Czasownik(R.drawable.ic_star_black_24dp, "pić", "wypić"));
-        mCzasownikList.add(new Czasownik(R.drawable.ic_star_border_black_24dp, "robić", "zrobić"));
-        mCzasownikList.add(new Czasownik(R.drawable.ic_star_border_black_24dp, "oglądać", "obejrzeć"));
-        mCzasownikList.add(new Czasownik(R.drawable.ic_star_border_black_24dp, "pić", "wypić"));
-        mCzasownikList.add(new Czasownik(R.drawable.ic_star_border_black_24dp, "robić", "zrobić"));
-        mCzasownikList.add(new Czasownik(R.drawable.ic_star_border_black_24dp, "oglądać", "obejrzeć"));
-        mCzasownikList.add(new Czasownik(R.drawable.ic_star_border_black_24dp, "pić", "wypić"));
-        mCzasownikList.add(new Czasownik(R.drawable.ic_star_border_black_24dp, "robić", "zrobić"));
-        mCzasownikList.add(new Czasownik(R.drawable.ic_star_border_black_24dp, "oglądać", "obejrzeć"));
-        mCzasownikList.add(new Czasownik(R.drawable.ic_star_border_black_24dp, "pić", "wypić"));
-        mCzasownikList.add(new Czasownik(R.drawable.ic_star_border_black_24dp, "robić", "zrobić"));
-        mCzasownikList.add(new Czasownik(R.drawable.ic_star_border_black_24dp, "oglądać", "obejrzeć"));
-        mCzasownikList.add(new Czasownik(R.drawable.ic_star_border_black_24dp, "pić", "wypić"));
-        mCzasownikList.add(new Czasownik(R.drawable.ic_star_border_black_24dp, "robić", "zrobić"));
-        mCzasownikList.add(new Czasownik(R.drawable.ic_star_border_black_24dp, "oglądać", "obejrzeć"));
-        mCzasownikList.add(new Czasownik(R.drawable.ic_star_border_black_24dp, "pić", "wypić"));
-        mCzasownikList.add(new Czasownik(R.drawable.ic_star_border_black_24dp, "robić", "zrobić"));
-        mCzasownikList.add(new Czasownik(R.drawable.ic_star_border_black_24dp, "oglądać", "obejrzeć"));
-        mCzasownikList.add(new Czasownik(R.drawable.ic_star_border_black_24dp, "pić", "wypić"));
+        mCzasownikList.add(new Czasownik(false, "robić", "zrobić"));
+        mCzasownikList.add(new Czasownik(true, "oglądać", "obejrzeć"));
+        mCzasownikList.add(new Czasownik(true, "pić", "wypić"));
+        mCzasownikList.add(new Czasownik(false, "robić", "zrobić"));
+        mCzasownikList.add(new Czasownik(false, "oglądać", "obejrzeć"));
+        mCzasownikList.add(new Czasownik(false, "pić", "wypić"));
+        mCzasownikList.add(new Czasownik(false, "robić", "zrobić"));
+        mCzasownikList.add(new Czasownik(false, "oglądać", "obejrzeć"));
+        mCzasownikList.add(new Czasownik(false, "pić", "wypić"));
+        mCzasownikList.add(new Czasownik(false, "robić", "zrobić"));
+        mCzasownikList.add(new Czasownik(false, "oglądać", "obejrzeć"));
+        mCzasownikList.add(new Czasownik(false, "pić", "wypić"));
+        mCzasownikList.add(new Czasownik(false, "robić", "zrobić"));
+        mCzasownikList.add(new Czasownik(false, "oglądać", "obejrzeć"));
+        mCzasownikList.add(new Czasownik(false, "pić", "wypić"));
+        mCzasownikList.add(new Czasownik(false, "robić", "zrobić"));
+        mCzasownikList.add(new Czasownik(false, "oglądać", "obejrzeć"));
+        mCzasownikList.add(new Czasownik(false, "pić", "wypić"));
+        mCzasownikList.add(new Czasownik(false, "robić", "zrobić"));
+        mCzasownikList.add(new Czasownik(false, "oglądać", "obejrzeć"));
+        mCzasownikList.add(new Czasownik(false, "pić", "wypić"));
     }
 
     public ArrayList<Czasownik> getFullList() {
@@ -93,11 +93,8 @@ public class AllVerbsFragment extends Fragment {
         mAdapter.setOnItemClickListener(new CzasownikAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(int position) {
-                if (mCzasownikList.get(position).getImageResource() == R.drawable.ic_star_border_black_24dp) {
-                    changeImage(position, R.drawable.ic_star_black_24dp);
-                } else if (mCzasownikList.get(position).getImageResource() == R.drawable.ic_star_black_24dp) {
-                    changeImage(position, R.drawable.ic_star_border_black_24dp);
-                } else changeImage(position, R.drawable.ic_practice_black_24dp);
+                if (mCzasownikList.get(position).getImageResource() == false) changeImage(position, true);
+                else changeImage(position, false);
             }
         });
     }

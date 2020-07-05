@@ -66,7 +66,7 @@ public class FavoriteFragment extends Fragment {
         return root;
     }
     public void insertItem(int position) {
-        mCzasownikList.add(position, new Czasownik(R.drawable.ic_star_black_24dp, "Nowy item","oryginalna pozycja - " + position));
+        mCzasownikList.add(position, new Czasownik(true, "Nowy item","oryginalna pozycja - " + position));
         mAdapter.notifyItemInserted(position);
     }
 
@@ -75,15 +75,15 @@ public class FavoriteFragment extends Fragment {
         mAdapter.notifyItemRemoved(position);
     }
 
-    public void changeImage(int position, int image) {
+    public void changeImage(int position, boolean image) {
         mCzasownikList.get(position).changeImage(image);
         mAdapter.notifyItemChanged(position);
     }
 
     public void createCzasownikList() {
         mCzasownikList = new ArrayList<>();
-        mCzasownikList.add(new Czasownik(R.drawable.ic_star_black_24dp, "oglądać", "obejrzeć"));
-        mCzasownikList.add(new Czasownik(R.drawable.ic_star_black_24dp, "pić", "wypić"));
+        mCzasownikList.add(new Czasownik(true, "oglądać", "obejrzeć"));
+        mCzasownikList.add(new Czasownik(true, "pić", "wypić"));
     }
 
     public void buildRecyclerView() {
